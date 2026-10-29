@@ -93,4 +93,4 @@ Last reviewed: 2026-10-29
 - Direct link: TCP 8140, Bridge = broker, frames sealed with pairing keys (`docs-dev/bridge-link.md`). The panel declares every entity it uses; without a password only released entities and the Energy Dashboard categories reach it. Picker lists Recent/Favorites/All (b369): V2 HW pending.
 - Security: optional Web Admin password (PBKDF2 300k), sessions, CSRF; command channel pairing v2 (X25519, 6-digit code), `docs-dev/command-encryption.md`.
 - Commands validate targets/availability/features and ignore retained commands; stable tile IDs in reserved PackedTileV7 bytes.
-- Turkish (tr): central Strings/LocaleProfile data, localized settings/history labels, alphabet-based i/İ and ı/I. Waveshare 7B rev3.2 user-verified with local Alexa overlay; standalone: 398 host cases pass, 1 skip; rev3 build passes.
+- Turkish (tr): central Strings/LocaleProfile data, localized settings/history labels, alphabet-based i/İ and ı/I. Waveshare 7B rev3.2 user-verified; standalone: 398 host cases pass, 1 skip; rev3 build passes.
