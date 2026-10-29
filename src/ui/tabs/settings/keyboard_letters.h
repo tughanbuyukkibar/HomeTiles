@@ -78,6 +78,8 @@ inline size_t encode(uint32_t cp, char* out, size_t size) {
 
 // The capital of a small letter; signs and letters without one (ß) stay.
 inline uint32_t upper(uint32_t cp) {
+  // Dotless i is a Unicode exception to the Extended-A adjacent pairs.
+  if (cp == 0x131) return 'I';
   if (cp >= 'a' && cp <= 'z') return cp - 32;
   if (cp >= 0xE0 && cp <= 0xFE && cp != 0xF7) return cp - 0x20;
   if (cp == 0xFF) return 0x178;
@@ -89,6 +91,18 @@ inline uint32_t upper(uint32_t cp) {
     return small ? cp - 1 : cp;
   }
   return cp;
+}
+
+// Alphabets containing dotless i also distinguish dotted capital I. Select
+// this case rule from the alphabet data, without language-code branches.
+inline uint32_t upper_for_letters(uint32_t cp, const char* own) {
+  if (cp == 'i') {
+    const char* p = own ? own : "";
+    for (uint32_t letter = next(p); letter; letter = next(p)) {
+      if (letter == 0x131) return 0x130;
+    }
+  }
+  return upper(cp);
 }
 
 // The plain letter ('a'..'z') an accented small letter is typed from by

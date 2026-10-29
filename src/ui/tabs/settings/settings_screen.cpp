@@ -117,7 +117,7 @@ const char* category_title(Category category) {
     case Category::Localization:
       return s.admin_settings_language;
     case Category::System:
-      return "System";
+      return s.system_title;
   }
   return "";
 }
@@ -139,20 +139,20 @@ const char* category_icon(Category category) {
   return "cog";
 }
 
-// A sleep or screensaver step as the mockup writes it: "30 s", "5 min",
-// "1 h", or Never past the last step.
+// Localized sleep or screensaver duration, or Never past the last step.
 void format_step(char* buf, size_t len, int index) {
   if (index >= settings_model::sleep_steps()) {
     snprintf(buf, len, "%s", settings_model::text().sleep_never);
     return;
   }
+  const i18n::Strings& s = settings_model::text();
   const unsigned seconds = settings_model::sleep_step_seconds(index);
   if (seconds < 60) {
-    snprintf(buf, len, "%u s", seconds);
+    snprintf(buf, len, s.duration_seconds_fmt, seconds);
   } else if (seconds < 3600) {
-    snprintf(buf, len, "%u min", seconds / 60);
+    snprintf(buf, len, s.duration_minutes_fmt, seconds / 60);
   } else {
-    snprintf(buf, len, "%u h", seconds / 3600);
+    snprintf(buf, len, s.duration_hours_fmt, seconds / 3600);
   }
 }
 

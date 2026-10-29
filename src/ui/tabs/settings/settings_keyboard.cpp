@@ -99,16 +99,18 @@ void set_label(lv_obj_t* key, const char* text) {
   if (label && strcmp(lv_label_get_text(label), text) != 0) lv_label_set_text(label, text);
 }
 
-// Letters uppercase with Shift (ASCII letters only; symbols stay).
+// Letters uppercase with Shift using the selected alphabet; symbols stay.
 void key_text(const char* text, char* out, size_t len) {
   snprintf(out, len, "%s", text);
-  if (g_kb.shift && !g_kb.symbols && out[0] >= 'a' && out[0] <= 'z' && !out[1]) out[0] = static_cast<char>(out[0] - 32);
+  if (g_kb.shift && !g_kb.symbols && out[0] >= 'a' && out[0] <= 'z' && !out[1]) {
+    keyboard_letters::encode(keyboard_letters::upper_for_letters(out[0], g_kb.letters), out, len);
+  }
 }
 
 // A letter of the accent page or of a held letter's forms, the capital
 // with Shift.
 void letter_text(uint32_t letter, char* out, size_t size) {
-  keyboard_letters::encode(g_kb.shift ? keyboard_letters::upper(letter) : letter, out, size);
+  keyboard_letters::encode(g_kb.shift ? keyboard_letters::upper_for_letters(letter, g_kb.letters) : letter, out, size);
 }
 
 void lay_out() {

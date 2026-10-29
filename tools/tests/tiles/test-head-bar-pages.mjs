@@ -311,8 +311,10 @@ for (const [table, words] of Object.entries({
   const body = i18n.slice(start, i18n.indexOf('};', start));
   for (const word of words) assert.ok(body.includes(word), `${table} ${word}`);
   // The refusal: one count and one button name.
-  const refusal = body.slice(body.indexOf('"%u') >= 0 ? body.indexOf('"%u') : body.indexOf('"Foldery bez'));
-  const refusalLine = refusal.slice(0, refusal.indexOf('\n'));
+  const fields = [...read('src/core/i18n/i18n.h').match(/struct Strings \{([\s\S]*?)\n\};/)[1]
+    .matchAll(/const char\*\s+(\w+);/g)].map(m => m[1]);
+  const texts = [...body.matchAll(/"(?:[^"\\]|\\.)*"/g)].map(m => JSON.parse(m[0]));
+  const refusalLine = texts[fields.indexOf('layout_switch_refused')];
   assert.ok((refusalLine.match(/%u/g) || []).length === 1 && (refusalLine.match(/%s/g) || []).length === 1, `${table}: %u and %s`);
 }
 const scripts = read('src/web/server/render/web_admin_scripts.cpp');

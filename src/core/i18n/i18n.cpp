@@ -695,6 +695,10 @@ static const Strings kStringsDe = {
     "Die Mediathek ist nicht verfügbar",
     "Dieser Player",
     "Alle abspielen",
+    "System",  // system_title
+    "%u s",  // duration_seconds_fmt
+    "%u min",  // duration_minutes_fmt
+    "%u h",  // duration_hours_fmt
 };
 
 static const Strings kStringsEn = {
@@ -1385,6 +1389,10 @@ static const Strings kStringsEn = {
     "The library is not available",
     "This player",
     "Play all",
+    "System",  // system_title
+    "%u s",  // duration_seconds_fmt
+    "%u min",  // duration_minutes_fmt
+    "%u h",  // duration_hours_fmt
 };
 
 static const Strings kStringsFr = {
@@ -2075,6 +2083,10 @@ static const Strings kStringsFr = {
     "La médiathèque est indisponible",
     "Ce lecteur",
     "Tout lire",
+    "Système",  // system_title
+    "%u s",  // duration_seconds_fmt
+    "%u min",  // duration_minutes_fmt
+    "%u h",  // duration_hours_fmt
 };
 
 static const LocaleProfile kLocaleDe = {
@@ -3140,6 +3152,10 @@ static const Strings kStringsPl = {
     "Biblioteka jest niedostępna",
     "Ten odtwarzacz",
     "Odtwórz wszystko",
+    "System",  // system_title
+    "%u s",  // duration_seconds_fmt
+    "%u min",  // duration_minutes_fmt
+    "%u h",  // duration_hours_fmt
 };
 
 static const Strings kStringsCs = {
@@ -3800,6 +3816,10 @@ static const Strings kStringsCs = {
     "Knihovna není dostupná",
     "Tento přehrávač",
     "Přehrát vše",
+    "Systém",  // system_title
+    "%u s",  // duration_seconds_fmt
+    "%u min",  // duration_minutes_fmt
+    "%u h",  // duration_hours_fmt
 };
 
 static const Strings kStringsEs = {
@@ -4460,6 +4480,10 @@ static const Strings kStringsEs = {
     "La biblioteca no está disponible",
     "Este reproductor",
     "Reproducir todo",
+    "Sistema",  // system_title
+    "%u s",  // duration_seconds_fmt
+    "%u min",  // duration_minutes_fmt
+    "%u h",  // duration_hours_fmt
 };
 
 static const Strings kStringsSk = {
@@ -5120,6 +5144,10 @@ static const Strings kStringsSk = {
     "Knižnica nie je dostupná",
     "Tento prehrávač",
     "Prehrať všetko",
+    "Systém",  // system_title
+    "%u s",  // duration_seconds_fmt
+    "%u min",  // duration_minutes_fmt
+    "%u h",  // duration_hours_fmt
 };
 
 static const LocaleProfile kLocalePl = {
@@ -5484,6 +5512,745 @@ static const LocaleProfile kLocaleSk = {
     1,  // QWERTZ
     "áäčďéíĺľňóôŕšťúýž"};
 
+static const Strings kStringsTr = {
+    "tr",  // code
+    "tr",  // html_lang
+    "Dil:",  // language_label
+    "Saat dilimi:",  // timezone_label
+    "Saat biçimi:",  // time_format_label
+    "Tarih biçimi:",  // date_format_label
+    "Otomatik (dile göre)",  // format_auto_language
+    "Otomatik (bölgeye göre)",  // format_auto_localization
+    "24 saat",  // format_24_hour
+    "12 saat",  // format_12_hour
+    "Ana ekran",  // home
+    "Klasör ",  // folder_prefix
+    "Waveshare Yönetim Paneli",  // admin_panel_title
+    "Düzenlemek için bir kutuya tıklayın. Kutuları sürükleyerek taşıyın, köşe tutamacıyla boyutlandırın. Türünü seçip ayarlarını düzenleyin.",  // admin_tile_hint
+    "Klasörü / Sekmeyi sil",  // admin_delete_folder_tab
+    "Tür",  // admin_type
+    "Başlık",  // admin_title
+    "Kutu başlığı",  // admin_tile_title_placeholder
+    "Örn. home, thermometer, lightbulb",  // admin_icon_placeholder
+    "Kutu rengi",  // admin_color
+    "Kopyala",  // admin_copy
+    "Yapıştır",  // admin_paste
+    "Sil",  // admin_delete
+    "İçe / Dışa aktar (tüm klasörler ve kutular)",  // admin_import_export
+    "Dışa aktar",  // admin_export
+    "İçe aktar",  // admin_import
+    "İçe aktarma, dosyadaki klasörlerin/kutuların ve varsa ekran koruyucunun üzerine yazar.",  // admin_import_overwrite
+    "Dil ve bölge",  // admin_settings_language
+    "Ekran görüntüsü ve tanılama",  // admin_settings_screenshot
+    "Ekran görüntüsü al ve indir",  // screenshot_create_download
+    "microSD karta /ui_screenshot.jpg olarak kaydeder. Mevcut dosyanın üzerine yazılır.",  // screenshot_saved_note
+    "Cihaz yazılımı dosyası",  // ota_firmware_file
+    "Güncelle",  // ota_upload_install
+    "Buraya yalnızca update.bin yükleyin. factory.bin yalnızca ilk kurulum içindir.",  // ota_update_note
+    "Dosya seç",  // ota_choose_file
+    "Dosya seçilmedi",  // ota_no_file_selected
+    "Bağlı",  // wifi_connected
+    "Bağlantı kesildi",  // wifi_disconnected
+    "Wi-Fi",  // wifi_label
+    "SSID",  // ssid_label
+    "Parola",  // wifi_password_label
+    "Sabit IP",  // wifi_static_ip_label
+    "Ağ geçidi",  // wifi_gateway_label
+    "Alt ağ maskesi",  // wifi_subnet_label
+    "DNS sunucusu",  // wifi_dns_label
+    "MQTT yapılandırılmadı",  // mqtt_not_configured
+    "Evet",  // yes
+    "Hayır",  // no
+    "MQTT sunucusu / IP",  // mqtt_host
+    "Port",  // mqtt_port
+    "Kullanıcı adı",  // mqtt_username
+    "Parola",  // mqtt_password
+    "MQTT istemci kimliği",  // mqtt_client_id
+    "Boş = otomatik",  // mqtt_client_id_placeholder
+    "MAC adresinden otomatik oluşturmak için boş bırakın.",  // mqtt_client_id_hint
+    "Cihaz konu kökü",  // mqtt_base_topic
+    "Home Assistant öneki",  // ha_prefix
+    "Kaydet",  // save
+    "Cihaz şimdi yeniden başlatılsın mı?",  // restart_confirm
+    "Yeniden başlat",  // restart_button
+    "MQTT ayarları kaydedildi",  // mqtt_saved_title
+    "Cihaz yeniden bağlanıyor...",  // mqtt_saved_message
+    "Bridge ayarları kaydedildi",  // bridge_saved_title
+    "Veriler MQTT üzerinden gönderildi.",  // bridge_saved_message
+    "Kaydedilemedi",  // save_failed
+    "Ekran",  // display_label
+    "Asla",  // sleep_never
+    "Boş",  // tile_type_empty
+    "Sensör",  // tile_type_sensor
+    "Enerji",  // tile_type_energy
+    "Hava durumu",  // tile_type_weather
+    "Düğme",  // tile_type_scene
+    "Klasör",  // tile_type_folder
+    "Anahtar",  // tile_type_switch
+    "Medya",  // tile_type_media
+    "Saat",  // tile_type_clock
+    "Metin",  // tile_type_text
+    "Ayarlar",  // tile_type_settings
+    "Geri",  // tile_type_back
+    "Seçim yok",  // no_selection
+    "Sensör varlığı",  // sensor_entity
+    "Birim",  // sensor_unit
+    "Ondalık basamak (boş = özgün değer)",  // sensor_decimals
+    "Değer boyutu",  // sensor_value_size
+    "Varsayılan",  // sensor_value_size_default
+    "Görünüm",  // sensor_display_mode
+    "Yok",  // sensor_display_none
+    "Gösterge",  // sensor_display_gauge
+    "Grafik",  // sensor_display_graph
+    "Gösterge alt sınırı",  // sensor_gauge_min
+    "Gösterge üst sınırı",  // sensor_gauge_max
+    "Yay açısı (90-359)",  // sensor_arc_degree
+    "Gösterge boyutu (100-800 px)",  // sensor_gauge_size
+    "Y kaydırma (-100 ile 200)",  // sensor_y_offset
+    "Grafik yüksekliği (20-200 px)",  // sensor_graph_height
+    "Ayrıntı penceresini aç",  // popup_open
+    "Kısa basış",  // short_press
+    "Uzun basış",  // long_press
+    "Değerin Y kaydırması (-100 ile 200)",  // sensor_value_y_offset
+    "Hava durumu varlığı",  // weather_entity
+    "Enerji varlığı",  // energy_entity
+    "Açılıp kapatılabilir varlık / Işık",  // switch_light
+    "Düzen",  // switch_display
+    "Simge düğmesi",  // switch_icon_button
+    "Anahtar",  // switch_layout_switch
+    "Parlaklık ayarı",  // switch_layout_dimmer
+    "Otomatik",  // switch_layout_automatic
+    "Yalnızca başlık",  // climate_layout_title_only
+    "Değerle birlikte",  // climate_layout_with_value
+    "Medya oynatıcı",  // media_entity
+    "Saati göster",  // show_time
+    "Tarihi göster",  // show_date
+    "Saat yazı boyutu",  // time_font_size
+    "Tarih yazı boyutu",  // date_font_size
+    "Metin",  // text_label
+    "Kutuda gösterilecek metin",  // text_placeholder
+    "Metin boyutu",  // text_size
+    "En fazla 31 karakter saklanır.",  // text_max_chars
+    "Hedef klasör",  // target_folder
+    "Sahne / Betik / Düğme",  // scene_label
+    "Önce bir kutu seçin",  // js_select_tile_first
+    "Kutu kopyalandı",  // js_tile_copied
+    "Kopyalanmış kutu yok",  // js_no_copied_tile
+    "Kutu yapıştırıldı",  // js_tile_pasted
+    "Ayarlar kutusu (sabit)",  // js_settings_tile_fixed
+    "Geri kutusu (sabit)",  // js_back_tile_fixed
+    "Bu kutu silinemez",  // js_tile_cannot_delete
+    "Yalnızca boş bir kutuya yapıştırabilirsiniz",  // js_paste_empty_only
+    "Bu kutu için burada yeterli alan yok",  // js_paste_no_space
+    "Bu klasör silinemez",  // js_folder_cannot_delete
+    "“{name}” klasörü silinsin mi?\n\nBu klasördeki tüm kutular silinecek ve üst klasördeki klasör kutusu kaldırılacak.",  // js_delete_folder_confirm
+    "Klasör silindi",  // js_folder_deleted
+    "Silinemedi",  // js_delete_failed
+    "Klasör bulunamadı",  // js_folder_not_found
+    "Kutu kaydedildi ve ekran güncellendi!",  // js_tile_saved
+    "Bilinmiyor",  // js_unknown_error
+    "Ağ hatası",  // js_network_error
+    "Kaydederken ağ hatası oluştu",  // js_network_error_save
+    "Dışa aktarma dosyası oluşturuldu!",  // js_export_created
+    "Dışa aktarılamadı",  // js_export_failed
+    "Geçersiz içe aktarma JSON'u",  // js_import_invalid_json
+    "İçe aktarılamadı",  // js_import_failed
+    "İçe aktarılıyor...",  // js_import_running
+    "İçe aktarma tamamlandı!",  // js_import_complete
+    "İçe aktarılıyor: {done} / {total}",  // js_import_progress
+    "İçe aktarılamıyor: “{tile}”, “{folder}” içine sığmıyor. Hiçbir şey değiştirilmedi.",  // js_import_conflict
+    "İçe aktarma “{folder}” içindeki “{tile}” kutusunda durdu. Yeniden içe aktarın.",  // js_import_stopped
+    "Ekran koruyucu",  // js_import_screensaver
+    "Kutu buraya sığmıyor",  // js_tile_does_not_fit
+    "Uygun bir yerleşim bulunamadı",  // js_no_layout_found
+    "Kutular taşındı ve kaydedildi!",  // js_tiles_moved_saved
+    "Taşınamadı",  // js_move_failed
+    "Yukarı taşı",  // js_move_up
+    "Aşağı taşı",  // js_move_down
+    "Taşırken ağ hatası oluştu",  // js_network_error_move
+    "Ekran görüntüsü oluşturuluyor...",  // js_screenshot_creating
+    "Ekran görüntüsü kaydedildi ve indirme başladı!",  // js_screenshot_saved
+    "Ekran görüntüsü alınamadı",  // js_screenshot_failed
+    "Önce bir update.bin dosyası seçin",  // js_ota_select_file
+    "Cihaz yazılımı güncelleniyor...",  // js_ota_uploading
+    "Güncelleme kuruluyor...",  // js_ota_installing
+    "Yeniden başlatma bekleniyor...",  // js_ota_reconnecting
+    "Güncelleme kuruldu. Cihaz şimdi yeniden başlatılıyor.",  // js_ota_success
+    "Cihaz yazılımı güncellenemedi",  // js_ota_failed
+    "Geri",  // wifi_back_btn
+    "Güncellemeleri denetle",  // system_check_updates_btn
+    "Güncellemeler denetleniyor...",  // system_checking
+    "Cihaz yazılımı güncel",  // system_up_to_date
+    "%s güncellemesi var",  // system_update_available_fmt
+    "%s sürümüne güncelle",  // system_install_btn_fmt
+    "Denetlenemedi",  // system_check_failed
+    "Güncelleme indiriliyor...",  // system_downloading
+    "Güncellenemedi",  // system_install_failed
+    "Kuruldu! Yeniden başlatılıyor...",  // system_installed_restarting
+    "Bağlantıyı kes",  // wifi_disconnect_btn
+    "Resimleri kullan",  // screensaver_use_wallpapers
+    "Karıştır",  // screensaver_shuffle
+    "Resimler",  // screensaver_wallpapers_heading
+    "Süre (saniye)",  // screensaver_duration_seconds
+    "Yakınlaştırma",  // screensaver_zoom
+    "X odağı",  // screensaver_focus_x
+    "Y odağı",  // screensaver_focus_y
+    "Saat",  // screensaver_clock_heading
+    "Haftanın günü",  // screensaver_show_weekday
+    "Metin gölgesi",  // screensaver_clock_shadow
+    "Saat hizası",  // screensaver_time_alignment
+    "Tarih hizası",  // screensaver_date_alignment
+    "Sol",  // alignment_left
+    "Ortala",  // alignment_center
+    "Sağ",  // alignment_right
+    "Kutu gölgeleri",  // screensaver_tile_shadow
+    "Başka bir kutu türüne geçmeden önce yüksekliği en az bir hücre yapın.",  // tile_fractional_type_hint
+    "Kutu kenarlıkları",  // screensaver_tile_border
+    "Kenardan kaydırma",  // swipe_gestures_heading
+    "Tema",  // theme_label
+    "Koyu",  // theme_dark
+    "Açık",  // theme_light
+    "Otomatik",  // theme_auto
+    "Kutu",  // panel_tab_tile
+    "Genel",  // panel_tab_global
+    "Ekran koruyucu",  // panel_tab_screensaver
+    "Düzen",  // layout_label
+    "Düzeni değiştir",  // layout_change
+    "Klasik",  // layout_classic
+    "Üst çubuk yatay",  // layout_bar
+    "Üst çubuk dikey",  // layout_portrait
+    "Etkin",  // layout_active
+    "Şuradan kopyala…",  // layout_copy_from
+    "Geri al",  // layout_undo
+    "Kaydedildi",  // layout_saved
+    "Geçiş yap",  // layout_switch
+    "Panel “{layout}” düzeniyle yeniden başlatılsın mı?",  // layout_switch_confirm
+    "Yerleşmemiş **{n} klasör**",  // layout_folders_missing
+    "Yerleşmemiş **1 klasör**",  // layout_folder_missing
+    "Yerleşmemiş **{n} kutu**",  // layout_tiles_missing
+    "Yerleşmemiş **1 kutu**",  // layout_tile_missing
+    "Yerleşmemiş **Ayarlar**",  // layout_settings_missing
+    "Her şey sığıyor",  // layout_all_fit
+    "“{layout}” değişiklikleri kaydedilmedi. Vazgeçilsin mi?",  // layout_unsaved_confirm
+    "Depo",  // layout_storage
+    "Bu da kaydedilir",  // layout_storage_hint
+    "Depoda **{n} kutu**",  // layout_parked_tiles
+    "Depoda **1 kutu**",  // layout_parked_tile
+    "**Depo dolu:** {n} / {max} kutu",  // layout_storage_full
+    "Klasör dolu: {n} / {max} kutu. Düzeni değiştir penceresindeki depoyu boşaltıp kaydedin.",  // folder_full
+    "Simgeler",  // icons_section
+    "Simge dosyası",  // icon_file_label
+    "Kutuyu sil",  // layout_delete_tile
+    "“{tile}” silinsin mi? Tüm düzenlerden kaldırılır.",  // layout_delete_confirm
+    "Genel",  // tile_color_mode_global
+    "Özel",  // tile_color_mode_custom
+    "Kapaktan",  // tile_color_mode_from_cover
+    "Açık",  // icon_disc_on
+    "Kapalı",  // icon_disc_off
+    "Simge rengi",  // tile_icon_color
+    "Değere göre simge rengi",  // tile_icon_color_by_value
+    "Kapalı",  // tile_icon_color_bar_off
+    "Yumuşak",  // tile_icon_color_smooth
+    "Kademeli",  // tile_icon_color_steps
+    "En az",  // tile_icon_color_min
+    "En çok",  // tile_icon_color_max
+    "Soğuk → Sıcak",  // tile_icon_color_preset_cold_warm
+    "Trafik ışığı",  // tile_icon_color_preset_traffic
+    "Pil",  // tile_icon_color_preset_battery
+    "Nem",  // tile_icon_color_preset_humidity
+    "Tek renk",  // tile_icon_color_preset_single
+    "İşaretçileri sürükleyin; rengini seçmek için tıklayın, eklemek için çubuğa çift tıklayın.",  // tile_icon_color_bar_hint
+    "Duruma göre simge rengi",  // tile_icon_color_by_state
+    "Durum",  // tile_icon_color_state
+    "İçerir",  // tile_icon_color_contains
+    "Durum ekle",  // tile_icon_color_add_state
+    "Kaldır",  // tile_icon_color_remove
+    "İlk eşleşen durum uygulanır. Eşleşme yoksa simge rengi kullanılır. Kullanılamayan durumlar varsayılan renkte kalır.",  // tile_icon_color_state_hint
+    "Açık",  // tile_icon_color_state_on
+    "Kapalı",  // tile_icon_color_state_off
+    "Varlığın rengi",  // tile_icon_color_source_auto
+    "Kendi kuralları",  // tile_icon_color_source_rules
+    "Varlık, HomeTiles Bridge'de seçilmiş olmalıdır. Durum yoksa simge rengi kullanılır.",  // tile_icon_color_source_hint
+    "Kurallar",  // tile_rules
+    "Kendi varlığı",  // tile_rules_own_entity
+    "Başka varlık",  // tile_rules_other_entity
+    "Eşleşen kural önceliklidir. Eşleşme yoksa yukarıdaki ayarlar uygulanır.",  // tile_rules_priority_hint
+    "Simge",  // tile_group_icon
+    "Gelişmiş",  // tile_group_advanced
+    "Kutu opaklığı",  // screensaver_background_opacity
+    "microSD kartın /images klasöründeki JPEG resimleri.",  // screensaver_storage_hint
+    "microSD kart takılı değil.",  // screensaver_no_sd
+    "/images içinde JPEG dosyası yok; siyah arka plan etkin kalır.",  // screensaver_no_wallpapers
+    "Ekran koruyucu kaydedildi!",  // js_screensaver_saved
+    "Ekran koruyucu kaydedilemedi",  // js_screensaver_save_failed
+    "Ekran koruyucu yüklenemedi",  // js_screensaver_load_failed
+    "IP yapılandırması",  // admin_ip_configuration
+    "DHCP seçili. Adres, Kaydet ve Yeniden başlat işlemlerinden sonra otomatik atanır.",  // admin_ip_dhcp_note
+    "Sabit IP, ağ geçidi ve alt ağ maskesi zorunludur. DNS isteğe bağlıdır. Eksik veya geçersiz değerde DHCP kullanılır. Kaydedip yeniden başlatınca uygulanır.",  // admin_ip_static_note
+    "Yönetim Paneli",  // admin_panel_word
+    "Slayt gösterisi",  // admin_slideshow
+    "Bağlantı türü",  // admin_connection_type
+    "Bağlantı türü yeniden başlatıldıktan sonra kullanılır.",  // admin_connection_type_note
+    "Sabit IP adresi kullan",  // admin_ip_use_static
+    "Göster",  // password_show
+    "Gizle",  // password_hide
+    "Çökme kaydını indir",  // crash_log_download
+    "SD tanılamasını aç",  // sd_diagnostics_open
+    "Kayıtlı bellek dökümü",  // coredump_stored
+    "Bellek dökümünü indir",  // coredump_download
+    "Bellek dökümünü sil",  // coredump_delete
+    "Tam yığın izini görmek için bellek dökümünü bir bilgisayarda esp-coredump ve derlemeye ait ELF dosyasıyla çözümleyin.",  // coredump_decode_note
+    "Dosya Yöneticisi",  // file_manager_title
+    "Denetleniyor...",  // file_manager_checking
+    "Yenile",  // file_manager_refresh
+    "Yeni klasör",  // file_manager_new_folder
+    "Dosyaları seç",  // file_manager_choose_files
+    "Yükle",  // file_manager_upload
+    "Seçim yok",  // file_manager_no_selection
+    "Aç",  // file_manager_open
+    "Yeniden adlandır",  // file_manager_rename
+    "Ad",  // file_manager_name
+    "Değiştirilme",  // file_manager_modified
+    "Boyut",  // file_manager_size
+    "Henüz yüklenmedi.",  // file_manager_not_loaded
+    "Yeniden başlatılıyor...",  // system_restarting
+    "Açık",  // light_on
+    "Kapalı",  // light_off
+    "Yükleniyor...",  // loading
+    "Çalıyor",  // media_state_playing
+    "Duraklatıldı",  // media_state_paused
+    "Boşta",  // media_state_idle
+    "Beklemede",  // media_state_standby
+    "Kapalı",  // media_state_off
+    "Bir şey çalmıyor",  // media_no_playback
+    "Kamera",  // camera_tile_type
+    "Hazır",  // camera_ready
+    "Kamera yayını hazırlanıyor...",  // camera_preparing
+    "Bridge'den isteniyor...",  // camera_bridge_requesting
+    "Kamera için HomeTiles Bridge v0.6.28 veya sonrası gerekir",  // camera_bridge_update_required
+    "Kamera yanıt vermedi; MQTT veya Bridge kullanılamıyor",  // camera_bridge_no_response
+    "Geçersiz kamera yanıtı",  // camera_invalid_response
+    "Bridge bir yayın URL'si sağlamadı",  // camera_no_stream_url
+    "Yayına bağlanılıyor...",  // camera_connecting
+    "Yayın kullanılamıyor",  // camera_unavailable
+    "Yayın durduruldu",  // camera_stream_stopped
+    "Yayın URL'si boş",  // camera_empty_url
+    "Kamera yayını zaten çalışıyor",  // camera_already_running
+    "Kamera görevi başlatılamadı",  // camera_task_start_failed
+    "Video karesi için yeterli PSRAM yok",  // camera_frame_memory_failed
+    "JPEG çözücü hatası",  // camera_decoder_error
+    "Kameraya bağlanılıyor",  // camera_http_connecting
+    "Yayın URL'si açılamadı",  // camera_url_open_failed
+    "JPEG çözücü başlatılamadı",  // camera_decoder_start_failed
+    "Yayın tamponu için yeterli PSRAM yok",  // camera_input_memory_failed
+    "Arabelleğe alınıyor...",  // camera_buffering
+    "Yayın bağlantısı sona erdi",  // camera_connection_ended
+    "HTTP hatası %d",  // camera_http_error_fmt
+    "Kamera videosu yalnızca Waveshare 8 inç modelinde kullanılabilir",  // camera_device_only
+    "Bilinmeyen kamera",  // camera_unknown
+    "Kamera görüntüsü kullanılamıyor",  // camera_no_source
+    "Home Assistant URL'si kullanılamıyor",  // camera_ha_url_unavailable
+    "Kamera yayını kurulamadı",  // camera_setup_failed
+    "JPEG giriş tamponu dolu",  // camera_input_buffer_full
+    "%.1f FPS",  // camera_fps_fmt
+    "MQTT bağlantısı kesildi",  // camera_mqtt_disconnected
+    "Kamera konusu eksik",  // camera_mqtt_topic_missing
+    "MQTT kuyruğu dolu",  // camera_mqtt_queue_full
+    "Tam ekran",  // camera_view_full_screen
+    "Giriş/Çıkış",  // admin_io
+    "Sıcaklık",  // admin_io_temperature
+    "Ad",  // admin_io_name
+    "GPIO",  // admin_io_gpio
+    "Boş GPIO yok",  // admin_io_no_free_gpio
+    "Çıkış mantığı",  // admin_io_output_logic
+    "Yüksekte etkin",  // admin_io_active_high
+    "Düşükte etkin",  // admin_io_active_low
+    "Yüksek",  // admin_io_high
+    "Düşük",  // admin_io_low
+    "Yeniden başlayınca",  // admin_io_after_restart
+    "Hassasiyet",  // admin_io_precision
+    "0 ondalık",  // admin_io_decimals_zero
+    "1 ondalık",  // admin_io_decimal_one
+    "2 ondalık",  // admin_io_decimals_two
+    "3 ondalık",  // admin_io_decimals_three
+    "Atamayı kaldır",  // admin_io_remove_assignment
+    "“{name}” kaldırılsın mı?",  // admin_io_remove_confirm_fmt
+    "Yerel giriş/çıkış atanmadı. Yukarıdan bir anahtar veya sıcaklık sensörü ekleyin.",  // admin_io_empty
+    "Bu cihazın doğrulanmış, yapılandırılabilir bir GPIO profili henüz yok.",  // admin_io_no_profile
+    "Kaydedilmemiş değişiklikler",  // admin_io_unsaved_changes
+    "Uyumlu boş GPIO yok",  // admin_io_no_compatible_gpio
+    "Ad gerekli",  // admin_io_name_required
+    "Kaydediliyor…",  // admin_io_saving
+    "Kaydedildi",  // admin_io_saved
+    "Yüklenemedi",  // admin_io_load_failed
+    "Giriş/çıkış atamaları yüklenemedi.",  // admin_io_could_not_load
+    "Kaydedilmemiş giriş/çıkış değişiklikleri kaybolacak. Cihaz yeniden başlatılsın mı?",  // admin_io_restart_unsaved_confirm
+    "Yeniden başlatılıyor…",  // admin_io_restarting
+    "PIN koruması",  // settings_lock_enable
+    "Kutuyu gizle",  // settings_hide_tile
+    "PIN",  // settings_pin_label
+    "4 ile 8 rakam",  // settings_pin_placeholder
+    "PIN kaydedildi.",  // settings_pin_configured
+    "Henüz PIN ayarlanmadı.",  // settings_pin_not_configured
+    "Üst çubukta ayarlar",  // settings_head_gear
+    "Üst çubuk",  // head_bar_heading
+    "Ayarlar simgesi",  // head_bar_gear
+    "Saat",  // head_bar_clock
+    "Sayfa özeti",  // head_bar_overview
+    "Ana ekran başlığı",  // head_bar_home_title
+    "Panelin dilindeki ad",  // head_bar_home_auto_hint
+    "Sol",  // edge_left
+    "Sağ",  // edge_right
+    "Üst",  // edge_top
+    "Alt",  // edge_bottom
+    "Fabrika PIN'i",  // factory_pin_label
+    "Daha uzun olan fabrika PIN'i, Ayarlar ve korunan klasörlerin kilidini açar. Bu yerel bir çocuk kilididir; oturum açma yöntemi değildir.",  // factory_pin_note
+    "Ayarlar kutusunu geri getirmek için önce ana ekranda bir hücre boşaltın.",  // settings_home_full
+    "PIN 4 ile 8 rakamdan oluşmalıdır.",  // pin_invalid
+    "Bu klasörü PIN ile koru",  // folder_pin_enable
+    "PIN",  // folder_pin_label
+    "4 ile 8 rakam",  // folder_pin_placeholder
+    "PIN'i uygula",  // folder_pin_apply
+    "Klasör PIN'i kaydedildi",  // folder_pin_saved
+    "Klasör PIN'i kaydedilemedi",  // folder_pin_save_failed
+    "Önce yeni klasör kutusunu kaydedin.",  // folder_pin_create_first
+    "Kilitli",  // pin_popup_locked
+    "Yanlış PIN",  // pin_popup_incorrect
+    "PIN girin",  // pin_popup_enter
+    "Kutuyu gizlemek için Ayarlar'ı buraya bırakın.",  // settings_tile_parking
+    "Dahili kamera",  // local_camera_section
+    "Home Assistant dahili kamerayı kullanabilsin",  // local_camera_enable
+    "Varsayılan olarak kapalıdır. Açıldığında yalnızca Home Assistant Bridge istediğinde fotoğraf veya canlı yayın alınır. Kapalıyken sensör yazılımsal beklemede kalır; bu kartta kameranın gücünü kesen fiziksel anahtar yoktur.",  // local_camera_note
+    "Durum",  // local_camera_status_label
+    "Devre dışı",  // local_camera_status_disabled
+    "Sensör denetleniyor...",  // local_camera_status_probing
+    "Sensör algılandı",  // local_camera_status_ready
+    "Kamera sensörü bulunamadı",  // local_camera_status_not_found
+    "Kamera hatası",  // local_camera_status_error
+    "Mod",  // local_camera_stream_mode
+    "Otomatik (Bridge)",  // local_camera_stream_mode_auto
+    "Görüntüyü aynala",  // local_camera_mirror
+    "Görüntü",  // local_camera_image_section
+    "Parlaklık",  // local_camera_brightness
+    "Kontrast",  // local_camera_contrast
+    "Doygunluk",  // local_camera_saturation
+    "Kırmızı",  // local_camera_red
+    "Mavi",  // local_camera_blue
+    "Sıfırla",  // local_camera_image_reset
+    "Kamera etkin",  // local_camera_indicator_active
+    "Bitirmek için dokun",  // local_camera_indicator_end
+    "Üstte kırmızı çizgi göster",  // local_camera_indicator_line
+    "Yayını bitirme düğmesini göster",  // local_camera_indicator_pill
+    "Kırmızı çizgi, kameranın kayıt aldığını ekranda gösterir. Düğme, canlı yayını doğrudan ekrandan bitirir.",  // local_camera_indicator_note
+    "Özel",  // local_camera_stream_mode_custom
+    "Saniyedeki kare",  // local_camera_custom_fps
+    "JPEG kalitesi",  // local_camera_custom_quality
+    "Kayıt göstergesi (deneysel)",  // local_camera_indicator_section
+    "Canlı yayın",  // local_camera_stream_section
+    "En yüksek kazanç",  // local_camera_gain
+    "Gelişmiş",  // local_camera_advanced
+    "Döndürme",  // local_camera_rotation
+    "Kırmızı ve maviyi değiştir",  // local_camera_rb_swap
+    "Renkleri ters çıkan kartlar içindir. Sonraki fotoğraf veya canlı yayın başlangıcında uygulanır.",  // local_camera_rb_swap_note
+    "Web Admin parolası",  // web_auth_section
+    "Yeni parola",  // web_auth_new_password
+    "Parolayı tekrarla",  // web_auth_repeat_password
+    "Parola belirle",  // web_auth_set
+    "Parolayı kaldır",  // web_auth_remove
+    "Oturumu kapat",  // web_auth_logout
+    "Parola en az 8 karakter olmalıdır.",  // web_auth_too_short
+    "Parolalar eşleşmiyor.",  // web_auth_mismatch
+    "Parola kaydedildi.",  // web_auth_saved
+    "Parola kaldırıldı.",  // web_auth_removed
+    "Parola değiştirilemedi.",  // web_auth_change_failed
+    "Web Admin parolası kaldırılsın mı? Ağdaki herkes Web Admin'i açabilir.",  // web_auth_remove_confirm
+    "Unuttunuz mu? Ekranda Sistem > Güvenlik bölümünden kaldırın.",  // web_auth_note
+    "Oturum aç",  // web_auth_login_title
+    "Parola",  // web_auth_password_label
+    "Oturum aç",  // web_auth_login_button
+    "Denetleniyor...",  // web_auth_checking
+    "Yanlış parola.",  // web_auth_wrong_password
+    "%s saniye sonra yeniden deneyin.",  // web_auth_wait_fmt
+    "Oturum açılamadı. Yeniden deneyin.",  // web_auth_login_failed
+    "Parolayı unuttunuz mu? Ekranda Ayarlar > Sistem > Güvenlik bölümünden kaldırın.",  // web_auth_forgot
+    "Güvenlik",  // security_btn
+    "Açık",  // security_state_on
+    "Kayıtlı (gizli)",  // secret_hidden_placeholder
+    "Kayıtlı parolalar ve PIN'ler gizli kalır.",  // web_auth_secrets_note
+    "Kayıtlı parola gizlidir. Korumak için alanı boş bırakın.",  // ap_wifi_keep_password_hint
+    "Bağlı",  // security_value_connected
+    "Bağlı değil",  // security_value_offline
+    "Web Admin parolası kaldırılsın mı?",  // security_password_question
+    "Web Admin daha sonra parolasız açılır.",  // security_password_question_hint
+    "Kaldır",  // security_remove
+    "Vazgeç",  // security_cancel
+    "Onayla",  // security_confirm
+    "Kapat",  // security_close
+    "Home Assistant'ta da şifrelemeyi kapatın.",  // security_unpaired_offline
+    "Home Assistant'a soruluyor...",  // pairing_asking
+    "Bu sayıyı burada ve Home Assistant'ta onaylayın",  // pairing_compare
+    "Home Assistant aynı sayıyı gösterir.",  // pairing_compare_hint
+    "Home Assistant bekleniyor",  // pairing_waiting
+    "Şifreleme için HomeTiles Bridge'i güncelleyin",  // pairing_no_answer
+    "Önce Home Assistant'ta şifrelemeyi kapatın",  // pairing_already_paired
+    "Birkaç dakika sonra yeniden deneyin",  // pairing_busy
+    "Home Assistant'ta reddedildi",  // pairing_rejected
+    "Başarısız. Yeniden deneyin.",  // pairing_failed
+    "Şimdi Home Assistant'a ekleyin",  // pairing_discoverable
+    "Parola ayarlı",  // web_auth_badge_on
+    "Parola yok",  // web_auth_badge_off
+    "Destek olmak için",  // web_support_prefix
+    "Yıldız verin",  // web_support_stars
+    "veya",  // web_support_or
+    "Renkli hava durumu simgeleri",  // weather_colored_icons
+    "Klasörler",  // admin_folders
+    "Otomatik",  // tile_icon_color_auto
+    "Önce ekranda Sistem > Güvenlik bölümündeki “Parola”ya dokunun.",  // web_auth_panel_tap_required
+    "Otomatik",  // tile_title_auto
+    "Home Assistant'taki ad",  // tile_title_auto_hint
+    "Ekran",  // settings_screen
+    "Parlaklık",  // settings_brightness
+    "Uyku",  // settings_sleep
+    "Döndürme",  // settings_rotation
+    "Ekran koruyucu",  // settings_screensaver
+    "Başlama süresi",  // settings_starts_after
+    "Ses",  // settings_sound
+    "Ses düzeyi",  // settings_volume
+    "Mikrofon",  // settings_microphone
+    "Ekran ve ses",  // settings_display_sound
+    "Uyku %s",  // settings_sleep_summary_fmt
+    "Bağlı değil",  // settings_not_connected
+    "Erişim noktası açık",  // settings_access_point_on
+    "Güncelleme var",  // settings_update_available
+    "Dil",  // settings_language
+    "Saat dilimi",  // settings_time_zone
+    "Saat biçimi",  // settings_time_format
+    "Tarih biçimi",  // settings_date_format
+    "Klavye",  // settings_keyboard
+    "Bağlantı",  // settings_connection
+    "Doğrudan · Bridge %s",  // settings_link_direct_fmt
+    "MQTT · Sunucu %s",  // settings_link_mqtt_fmt
+    "Eşleştirme",  // settings_pairing
+    "Komutlar şifreli",  // settings_commands_encrypted
+    "Komutlar ve durumlar şifreli",  // settings_states_encrypted
+    "Kullanılmıyor, doğrudan bağlantı etkin",  // settings_mqtt_unused
+    "Doğrudan bağlantı etkinken panel MQTT sunucusuna bağlanmaz. Alanlar kayıtlı kalır.",  // settings_mqtt_unused_note
+    "Eşleştirildi",  // settings_paired
+    "Eşleştirilmedi",  // settings_not_paired
+    "Eşleştir",  // settings_pair
+    "Web Admin parola ister",  // settings_password_asks
+    "Web Admin parolasız açılır",  // settings_password_none
+    "İzin ver",  // settings_allow
+    "Şimdi Web Admin'de belirleyin",  // settings_set_password_now
+    "Kurulum",  // settings_setup
+    "Home Assistant eşleştirmesi kaldırılsın mı?",  // settings_unpair_question
+    "Yeniden eşleştirene kadar Home Assistant bağlantısı kesilir.",  // settings_unpair_text
+    "Eşleştirmeyi kaldır",  // settings_unpair
+    "Panel yeniden başlatılsın mı?",  // settings_restart_question
+    "Panel birkaç saniye içinde geri gelir.",  // settings_restart_text
+    "Projeyi açmak için tarayın. Yıldız vererek destek olabilirsiniz.",  // settings_github_text
+    "Aşağıdan bir ağ seçin",  // settings_choose_network
+    "Erişim noktası",  // settings_hotspot
+    "Ağ olmadan kurulum için",  // settings_hotspot_off_sub
+    "Diğer cihazlar panele bağlanabilir",  // settings_hotspot_on_sub
+    "Ağ",  // settings_network
+    "Adres",  // settings_address
+    "Ağlar",  // settings_networks
+    "Ara",  // settings_search
+    "Aranıyor...",  // settings_searching
+    "Ağ ekle",  // settings_add_network
+    "Ağa bağlan",  // settings_join_network
+    "Ağ adı",  // settings_network_name
+    "Bağlanılıyor...",  // settings_connecting
+    "Bağlanılamadı. Parolayı kontrol edin.",  // settings_connect_failed
+    "Ethernet",  // settings_ethernet
+    "Geçiş için yeniden başlat",  // settings_restart_to_switch
+    "IP adresi",  // settings_ip_address
+    "Otomatik",  // settings_automatic
+    "Sabit",  // settings_static
+    "Sabit adres",  // settings_static_address
+    "Web Admin'de ayarla",  // settings_set_in_web_admin
+    "Adım %d / %d",  // setup_step_fmt
+    "Temel ayarlar",  // setup_language_title
+    "Wi-Fi'ye bağlan",  // setup_wifi_title
+    "Home Assistant'a ekle",  // setup_ha_title
+    "Kutularınızı ekleyin",  // setup_tiles_title
+    "İleri",  // setup_next
+    "Bitir",  // setup_finish
+    "Daha sonra",  // setup_later
+    "Başka ağ",  // setup_other_network
+    "Telefonunuzla kurun",  // setup_with_phone
+    "HomeTiles'ı kur",  // setup_install_hometiles
+    "Henüz kurulmadıysa Home Assistant'ta",  // setup_install_where
+    "Bu paneli eşleştir",  // setup_pair_panel
+    "Home Assistant'a ekle",  // setup_add_in_ha
+    "Ayarlar › Cihazlar ve hizmetler › Keşfedilenler",  // setup_add_where
+    "Eşleştirmeye dön",  // setup_back_to_pairing
+    "Önce Bridge'i kurun",  // setup_install_bridge
+    "Eşleştirme kodu",  // setup_pairing_code
+    "Home Assistant ile eşleştirildi",  // setup_paired
+    "Önce Wi-Fi'ye bağlanın",  // setup_wifi_first
+    "Kutularınızı eklemek için bu adresi bilgisayarınızın tarayıcısında açın.",  // setup_scan_tiles
+    "Orada bir Web Admin parolası belirleyin.",  // setup_password_hint
+    "Paneli yalnızca sizin değiştirebilmeniz için orada bir Web Admin parolası belirleyin.",  // setup_password_hint_long
+    "Kurulumdan çıkılsın mı?",  // setup_leave_question
+    "Daha sonra %s › Sistem › %s bölümünden tamamlayabilirsiniz.",  // setup_leave_text_fmt
+    "Çık",  // setup_leave
+    "Güncelle",  // settings_update_short
+    "Slayt gösterisi (SD kart)",  // screensaver_source_sd
+    "Home Assistant'tan resim",  // screensaver_source_ha
+    "Resim veya kamera",  // screensaver_picture_entity
+    "Varlığın her yeni resmi hemen gösterilir. Kamera, seçilen aralıkta fotoğraf gönderir. Bridge'e doğrudan bağlantı gerekir.",  // screensaver_picture_hint
+    "Ölçekleme",  // screensaver_picture_fit
+    "Doldur",  // screensaver_fit_fill
+    "Sığdır",  // screensaver_fit_contain
+    "Özgün",  // screensaver_fit_original
+    "Yenileme (sn)",  // screensaver_picture_every
+    "Göster",  // camera_show
+    "Simge",  // camera_show_icon
+    "Resim",  // camera_show_picture
+    "Daire ve başlık saydamlığı",  // camera_head_transparency
+    "Daire ve başlık",  // camera_head
+    "Otomatik",  // camera_head_auto
+    "Koyu",  // camera_head_dark
+    "Açık",  // camera_head_light
+    "Dokununca aç",  // camera_tap
+    "Ayrıntı penceresi",  // camera_tap_popup
+    "Tam ekran",  // camera_tap_full
+    "Doldur",  // tile_fill
+    "Doldur",  // tile_rule_fill
+    "Renk",  // tile_group_color
+    "Haftanın günü",  // clock_weekday_label
+    "Yok",  // clock_weekday_none
+    "Kısa",  // clock_weekday_short
+    "Uzun",  // clock_weekday_long
+    "Rakamları kaydır",  // clock_roll_digits
+    "Hizalama",  // clock_alignment_label
+    "Biçem",  // clock_style_label
+    "Dijital",  // clock_style_digital
+    "Analog",  // clock_style_analog
+    "Duvar saati",  // clock_style_wall
+    "Kadran",  // clock_dial_label
+    "Akrep ve yelkovan",  // clock_hands_label
+    "Arduvaz",  // clock_color_slate
+    "Siyah",  // clock_color_black
+    "Beyaz",  // clock_color_white
+    "Adaçayı",  // clock_color_sage
+    "Lacivert",  // clock_color_navy
+    "Kiremit",  // clock_color_terracotta
+    "Altın",  // clock_color_gold
+    "Gümüş",  // clock_color_silver
+    "Yatay",  // text_align_horizontal
+    "Dikey",  // text_align_vertical
+    "Üst",  // alignment_top
+    "Orta",  // alignment_middle
+    "Alt",  // alignment_bottom
+    "Saydam",  // tile_color_mode_transparent
+    "Işıklar",  // new_panel_lights
+    "İklim",  // new_panel_climate
+    "Sahneler",  // new_panel_scenes
+    "Hoş geldiniz!\nKaydırın",  // new_panel_welcome
+    "Yatay",  // setup_layout_landscape
+    "Dikey",  // setup_layout_upright
+    "Bu klasör PIN ile kilitli. Sayfalarda PIN yoktur. Kilidi kaldırıp sayfa olarak gösterilsin mi?",  // js_page_unlock_confirm
+    "Sayfalar kaydedildi",  // js_pages_saved
+    "Bu düzende %u klasöre yer yok. Önce “%s” bölümünden yerleştirin.",  // layout_switch_refused
+    "Sayfalarda PIN yoktur.",  // folder_pin_page
+    "Sayfalar",  // pages_title
+    "Klasörde hâlâ kutular var. “Sil” ile kaldırın.",  // js_folder_type_locked
+    "Ayrıntı penceresi",  // media_popup_layout
+    "Kapak solda",  // media_layout_cover_left
+    "Kapak ortada",  // media_layout_cover_center
+    "Kaynak",  // media_source
+    "Ses modu",  // media_sound_mode
+    "Hoparlörler",  // media_speakers
+    "Medya arşivi",  // media_library
+    "Burada içerik yok",  // media_library_empty
+    "Arşiv kullanılamıyor",  // media_library_failed
+    "Bu oynatıcı",  // media_this_player
+    "Tümünü çal",  // media_play_all
+    "Sistem",  // system_title
+    "%u sn",  // duration_seconds_fmt
+    "%u dk",  // duration_minutes_fmt
+    "%u sa",  // duration_hours_fmt
+};
+
+static const LocaleProfile kLocaleTr = {
+    "tr",
+    "Türkçe",
+    ",",
+    "Bugün",
+    "Yarın",
+    "Bugün",
+    {"Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"},
+    {"Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"},
+    {"Açık gece", "Bulutlu", "Olağandışı", "Sisli", "Dolu", "Şimşekli", "Gök gürültülü yağmur",
+     "Parçalı bulutlu", "Sağanak", "Yağmurlu", "Karlı", "Karla karışık yağmur", "Güneşli", "Rüzgarlı", "Rüzgarlı"},
+    {"Sıcaklık sensörü", "Nem sensörü", "Hava durumu varlığının değeri"},
+    "İklim",
+    "İklim varlığı",
+    "Hedef",
+    "Hedef nem",
+    "Nem",
+    "Isıtma hedefi",
+    "Soğutma hedefi",
+    {"Isıtıyor", "Ön ısıtma", "Soğutuyor", "Kurutuyor", "Fan", "Buz çözüyor", "Boşta", "Kapalı",
+     "Isıtma", "Soğutma", "Isıtma/Soğutma", "Otomatik", "Kurutma", "Yalnız fan", "İklim", "Kullanılamıyor", "Bilinmiyor"},
+    {"Mevcut", "Hedef sıcaklık", "Mevcut nem"},
+    {"Mod", "Ön ayar", "Fan modu", "Salınım modu", "Yatay salınım modu"},
+    {"Yok", "Ekonomi", "Evde değil", "Güçlü", "Konfor", "Evde", "Uyku", "Etkinlik", "Otomatik",
+     "Düşük", "Orta", "Yüksek", "Açık", "Kapalı", "Üst", "Orta", "Odaklı", "Dağınık", "Dikey", "Yatay",
+     "İkisi", "Sol", "Orta", "Sağ", "Salınım", "Geniş"},
+    {"Otomatik", "Boş", "Boşalt / Kaldır", "Boş alan", "Seçilen alanın içeriği", "Yatay", "Dikey"},
+    {"Panjur", "Panjur varlığı", "Konum", "Eğim", "Aç", "Durdur", "Kapat"},
+    {"Açık", "Açılıyor", "Kapalı", "Kapanıyor", "Kullanılamıyor", "Bilinmiyor"},
+    1,  // 24-hour
+    1,  // day/month/year
+    ":00",
+    "{d} {m}",
+    {"Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"},
+    {"Genel", "Avrupa", "Amerika", "Afrika ve Orta Doğu", "Asya", "Okyanusya"},
+    {"UTC+0 - UTC", "UTC+0 / UTC+1 - Londra", "UTC+1 / UTC+2 - Berlin", "UTC+2 / UTC+3 - Atina",
+     "UTC+3 - İstanbul", "UTC+3 - Moskova", "UTC-10 - Honolulu", "UTC-8 / UTC-7 - Los Angeles",
+     "UTC-7 - Phoenix", "UTC-7 / UTC-6 - Denver", "UTC-6 / UTC-5 - Chicago", "UTC-5 / UTC-4 - New York",
+     "UTC-3 - Buenos Aires", "UTC-3 - Sao Paulo", "UTC+2 - Johannesburg", "UTC+3 - Nairobi", "UTC+4 - Dubai",
+     "UTC+5 - Karaçi", "UTC+5:30 - Kalküta", "UTC+6 - Dakka", "UTC+7 - Bangkok", "UTC+8 - Singapur",
+     "UTC+8 - Perth", "UTC+9 - Tokyo", "UTC+9:30 - Darwin", "UTC+10 / UTC+11 - Sidney", "UTC+12 / UTC+13 - Auckland"},
+    {"İkili sensör", "İkili sensör varlığı", "Geçmiş", "Etkinlik", "Geçmiş kullanılamıyor", "Etkinlik yok", "24 sa", "7 gün"},
+    {"Açık", "Kapalı", "Düşük", "Normal", "Şarj oluyor", "Şarj olmuyor", "Algılandı", "Yok", "Soğuk", "Bağlı",
+     "Bağlantı kesildi", "Açık", "Kapalı", "Sıcak", "Kilitsiz", "Kilitli", "Islak", "Kuru", "Hareketli", "Durdu",
+     "Takılı", "Çıkarılmış", "Güç algılandı", "Güç yok", "Evde", "Evde değil", "Sorun", "Normal", "Çalışıyor",
+     "Çalışmıyor", "Güvensiz", "Güvenli", "Güncelleme var", "Güncel", "Kullanılamıyor", "Bilinmiyor"},
+    {"Sayı", "Seçim", "Tarih/saat", "Sayı varlığı", "Seçim varlığı", "Tarih/saat varlığı", "Uygula", "Geçersiz değer",
+     "Uygulanıyor…", "Değiştirilemedi", "YYYY-MM-DD", "HH:MM:SS", "YYYY-MM-DD HH:MM:SS", "Yıl", "Ay", "Gün", "ss", "dd", "sn"},
+    {"Kilit", "Alarm paneli", "Fan", "Kilit varlığı", "Alarm paneli varlığı", "Fan varlığı", "Kapıyı aç", "Açılsın mı?",
+     "Kapı açık", "Kilidi aç", "Kilitle", "Alarmı kapat", "Evde", "Evde değil", "Gece", "Tatil", "Özel", "Ön ayar",
+     "Yok", "Salınım", "Yön", "İleri", "Geri", "Hız %u", "Kod girin", "Yanlış kod", "Çok fazla yanlış kod · %u sn",
+     "Buradan kullanmak için paneli Home Assistant ile eşleştirin ve Web Admin parolası belirleyin.",
+     "Buradan kullanmak için paneli Home Assistant ile eşleştirin.",
+     "Buradan kullanmak için Web Admin parolası belirleyin.",
+     "Panelden kilit açma kapalı. HomeTiles Bridge seçeneklerinden izin verin.",
+     "Panelden alarm kapatma kapalı. HomeTiles Bridge seçeneklerinden izin verin.",
+     "Bu cihaz metin kodu gerektiriyor. Home Assistant'tan kullanın.",
+     "Panelden buna izin verilmiyor.", "Başka bir komut çalışıyor. Biraz sonra yeniden deneyin.",
+     "Cihaz bunu desteklemiyor.", "Cihaz kullanılamıyor.", "Komutun süresi doldu. Yeniden deneyin.",
+     "Home Assistant yanıt vermedi.", "Home Assistant komutu çalıştıramadı.", "Panelin saati henüz ayarlanmadı.", "Cihaz yanıt vermedi."},
+    {"Kilitli", "Kilitsiz", "Kilitleniyor", "Kilit açılıyor", "Açık", "Açılıyor", "Sıkıştı", "Kullanılamıyor", "Bilinmiyor"},
+    {"Devre dışı", "Evde kurulu", "Dışarıda kurulu", "Gece kurulu", "Tatilde kurulu", "Özel kurulu", "Bekliyor",
+     "Kuruluyor", "Devreden çıkıyor", "Alarm çalıyor", "Kullanılamıyor", "Bilinmiyor"},
+    {"Varlık seçin", "Ara", "“{query}” ile eşleşen varlık yok", "Varlıklar yüklenemedi. Seçili varlık korunur.",
+     "Yeniden dene", "Temizle", "Kullanılabilir varlık yok",
+     "Yalnızca Bridge'de izin verilen varlıklar. Web Admin parolasıyla tümünü bulabilirsiniz.", "Son kullanılan", "Favoriler", "Tümü"},
+    {"Sensör", "İkili sensör", "Işık", "Anahtar", "Fan", "Panjur", "İklim", "Medya oynatıcı", "Hava durumu",
+     "Kamera", "Kilit", "Alarm paneli", "Sayı", "Seçim", "Tarih/saat", "Sahne", "Betik", "Düğme", "Otomasyon",
+     "Nemlendirici", "Siren", "Uzaktan kumanda"},
+    {"Otomatik", "Varlığın simgesi", "Simge yok", "Yalnızca başlık ve değer", "“{query}” ile eşleşen simge yok"},
+    {"Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"},
+    "{d} {M}",
+    "{d} {M} {Y}",
+    0,  // QWERTY
+    "çğıöşü"};
+
 static const LanguageEntry kLanguages[] = {
     {&kStringsEn, &kLocaleEn},
     {&kStringsDe, &kLocaleDe},
@@ -5494,6 +6261,7 @@ static const LanguageEntry kLanguages[] = {
     {&kStringsCs, &kLocaleCs},
     {&kStringsEs, &kLocaleEs},
     {&kStringsSk, &kLocaleSk},
+    {&kStringsTr, &kLocaleTr},
 };
 
 static size_t find_language_index(const char* language_code) {

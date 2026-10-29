@@ -28,7 +28,7 @@ assert.ok(tab.indexOf('appendSettingsNavItem(html, "system"') < tab.indexOf('set
 for (const page of ['network', 'locale', 'system', 'io', 'files', 'diagnostics']) {
   assert.match(tab, new RegExp(`<section class="settings-page[^"]*" data-settings-page="${page}">`), `${page} page`);
 }
-assert.match(tab, /appendSettingsNavItem\(html, "system", "#26A69A", "chip", "System", FW_VERSION\);/,
+assert.match(tab, /appendSettingsNavItem\(html, "system", "#26A69A", "chip", tr\.system_title, FW_VERSION\);/,
   'System: the panel\'s color, icon and name, with the version');
 // The form holds WLAN, Lokalisierung and System (MQTT); I/O and the rest act at once.
 const form = tab.slice(tab.indexOf('<form id="admin_settings_form"'), tab.indexOf('</form>'));

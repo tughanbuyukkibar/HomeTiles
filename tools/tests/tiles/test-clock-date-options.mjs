@@ -83,7 +83,7 @@ ${LANGS.map(lang => `  if (code && strcmp(code, ${cstr(lang)}) == 0) return k_${
 // October 2026 (a Saturday), in every language.
 const cases = [];
 for (const lang of LANGS) {
-  for (const [wday, day, month] of [[5, 21, 7], [6, 10, 9]]) {
+  for (const [wday, day, month] of [[5, 21, 7], [6, 10, 9], [4, 29, 9]]) {
     for (let format = 1; format <= 7; ++format) {
       for (const weekday of [0, 1, 2]) {
         for (const show of [1, 0]) cases.push({lang, wday, day, month, format, weekday, show});
@@ -146,8 +146,11 @@ if (output !== null) {
     .map(l => l.replace(/\|\r?$/, '').match(/^pattern (\w+) (\d) (.*)$/)).map(m => [m[1] + m[2], m[3]]));
   assert.deepEqual(patterns, {de6: 'DD. MMMM', de7: 'DD. MMMM YYYY', en6: 'DD MMMM', en7: 'DD MMMM YYYY',
     fr6: 'DD MMMM', fr7: 'DD MMMM YYYY', pl6: 'DD MMMM', pl7: 'DD MMMM YYYY', cs6: 'DD. MMMM', cs7: 'DD. MMMM YYYY',
-    es6: 'DD de MMMM', es7: 'DD de MMMM de YYYY', sk6: 'DD. MMMM', sk7: 'DD. MMMM YYYY'});
+    es6: 'DD de MMMM', es7: 'DD de MMMM de YYYY', sk6: 'DD. MMMM', sk7: 'DD. MMMM YYYY', tr6: 'DD MMMM', tr7: 'DD MMMM YYYY'});
   // The year in the language's own order (user 2026-10-18: Spanish "de").
+  assert.equal(at('tr', 29, 7, 2), 'Perşembe, 29 Ekim 2026');
+  assert.equal(at('tr', 21, 7, 0), '21 Ağustos 2026');
+  assert.equal(at('tr', 21, 6, 2), 'Cuma, 21 Ağustos');
   assert.equal(at('es', 21, 7, 0), '21 de agosto de 2026');
   assert.equal(at('es', 21, 6, 2), 'Viernes, 21 de agosto');
   assert.equal(at('cs', 21, 7, 0), '21. srpna 2026', 'Czech month in the genitive');

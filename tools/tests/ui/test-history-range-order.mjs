@@ -8,18 +8,18 @@ import assert from 'node:assert/strict';
 import {readRepoFile} from '../../lib/admin-source.mjs';
 
 const sensor = readRepoFile('src/ui/popups/sensor/sensor_popup.cpp');
-assert.match(sensor, /ctx->range_week_btn = make_range_button\("7D"\);\s*ctx->range_day_btn = make_range_button\("24H"\);/,
+assert.match(sensor, /ctx->range_week_btn = make_range_button\(i18n::binary_sensor_label\(configManager\.getConfig\(\)\.language, 7\)\);\s*ctx->range_day_btn = make_range_button\(i18n::binary_sensor_label\(configManager\.getConfig\(\)\.language, 6\)\);/,
   'Sensor history: 7D is created first, so the flex row puts it left');
 
 const energy = readRepoFile('src/ui/popups/energy/energy_popup.cpp');
-assert.match(energy, /ctx->week_btn = make_button_label\(period_row, "7D", &ctx->week_label\);\s*ctx->day_btn = make_button_label\(period_row, today_button_label\(\), &ctx->day_label\);/,
+assert.match(energy, /ctx->week_btn = make_button_label\(period_row, i18n::binary_sensor_label\(configManager\.getConfig\(\)\.language, 7\), &ctx->week_label\);\s*ctx->day_btn = make_button_label\(period_row, today_button_label\(\), &ctx->day_label\);/,
   'Energy: 7D left of Today');
 assert.doesNotMatch(energy, /"24H"/, 'Energy shows no 24H label');
 assert.match(energy, /void update_period_buttons\([\s\S]*?fit_today_button\(ctx\);\s*\}/,
   'Each opening sets Today in the current display language');
 
 const weather = readRepoFile('src/ui/popups/weather/weather_popup.cpp');
-assert.match(weather, /header_week_btn = make_header_action_button\("7D", kFooterOuterActionX, FONT_UNIT\);/,
+assert.match(weather, /header_week_btn = make_header_action_button\(i18n::binary_sensor_label\(configManager\.getConfig\(\)\.language, 7\), kFooterOuterActionX, FONT_UNIT\);/,
   'Weather: 7D takes the outer slot');
 assert.match(weather, /make_header_action_button\(weather_today_button_text\(\), kFooterInnerActionX, FONT_UNIT\);/,
   'Weather: Today takes the inner slot next to the day navigation');

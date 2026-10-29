@@ -1,6 +1,6 @@
 # HomeTiles shared project context
 
-Last reviewed: 2026-10-23
+Last reviewed: 2026-10-29
 
 ## Sources of truth
 
@@ -93,4 +93,4 @@ Last reviewed: 2026-10-23
 - Direct link: TCP 8140, Bridge = broker, frames sealed with pairing keys (`docs-dev/bridge-link.md`). The panel declares every entity it uses; without a password only released entities and the Energy Dashboard categories reach it. Picker lists Recent/Favorites/All (b369): V2 HW pending.
 - Security: optional Web Admin password (PBKDF2 300k), sessions, CSRF; command channel pairing v2 (X25519, 6-digit code), `docs-dev/command-encryption.md`.
 - Commands validate targets/availability/features and ignore retained commands; stable tile IDs in reserved PackedTileV7 bytes.
-- Languages en/de/fr/pl/cs/es/sk are data only (Strings + LocaleProfile incl. long date pattern and keyboard; no language codes in code); `test-i18n-panel-glyphs` rejects missing glyphs. Device text fit cs/es/sk pending.
+- Turkish (tr): central Strings/LocaleProfile data, localized settings/history labels, alphabet-based i/İ and ı/I. Waveshare 7B rev3.2 user-verified with local Alexa overlay; standalone: 398 host cases pass, 1 skip; rev3 build passes.

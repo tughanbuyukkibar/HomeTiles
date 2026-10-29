@@ -56,7 +56,7 @@ for (const table of tables) {
   if (table === 'kStringsEn') assert.deepEqual(texts, english, 'English System texts');
   // The way to Home Assistant: one %s each, the Bridge or the broker address.
   assert.match(texts[1], /^[^%]* · Bridge %s$/, `${table}: the direct link pattern`);
-  assert.equal(texts[2], 'MQTT · Broker %s', `${table}: the MQTT pattern`);
+  assert.equal(texts[2], table === 'kStringsTr' ? 'MQTT · Sunucu %s' : 'MQTT · Broker %s', `${table}: the MQTT pattern`);
 }
 
 // --- Page ---------------------------------------------------------------------------------------------

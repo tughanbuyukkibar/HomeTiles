@@ -23,6 +23,7 @@ const keys = ['settings_screen', 'settings_brightness', 'settings_sleep', 'setti
   'settings_sleep_summary_fmt',
   'settings_not_connected', 'settings_access_point_on', 'settings_update_available'];
 const expected = {
+  kStringsTr: ['Ekran', 'Parlaklık', 'Uyku', 'Döndürme', 'Ekran koruyucu', 'Başlama süresi', 'Ses', 'Ses düzeyi', 'Mikrofon', 'Ekran ve ses', 'Uyku %s', 'Bağlı değil', 'Erişim noktası açık', 'Güncelleme var'],
   kStringsEn: ['Screen', 'Brightness', 'Sleep', 'Rotation', 'Screensaver', 'Starts after', 'Sound', 'Volume', 'Microphone', 'Display & Sound', 'Sleep %s',
     'Not connected', 'Access point on', 'Update available'],
   kStringsDe: ['Bildschirm', 'Helligkeit', 'Standby', 'Drehung', 'Screensaver', 'Startet nach', 'Ton', 'Lautstärke', 'Mikrofon', 'Anzeige & Ton', 'Standby %s',
@@ -93,7 +94,7 @@ assert.match(rawModel, /void microphone_selected\(bool on\) \{ speaker::setMicEn
 // beside the monitor; boards without a speaker keep "Display" and the monitor.
 assert.match(screen, /case Category::Display:\s*return settings_model::sound_values\(\)\.speaker \? s\.settings_display_sound : s\.display_label;/);
 assert.match(rawScreen, /case Category::Display:\s*return settings_model::sound_values\(\)\.speaker \? "monitor-speaker" : "monitor";/);
-const soundNames = {kStringsEn: 'Display & Sound', kStringsDe: 'Anzeige & Ton', kStringsFr: '\u00c9cran et son',
+const soundNames = {kStringsTr: 'Ekran ve ses', kStringsEn: 'Display & Sound', kStringsDe: 'Anzeige & Ton', kStringsFr: '\u00c9cran et son',
   kStringsPl: 'Ekran i d\u017awi\u0119k', kStringsCs: 'Displej a zvuk', kStringsEs: 'Pantalla y sonido', kStringsSk: 'Displej a zvuk'};
 const soundIndex = fields.indexOf('settings_display_sound');
 assert.ok(soundIndex > 0, 'settings_display_sound is a field');
@@ -125,7 +126,7 @@ assert.match(width, /name = name \* 13 \/ 10;/);
 assert.match(width, /3 \* settings_style::kRowGap -\s*settings_style::kValueWidth - name/);
 // Steps read like the mockup: "30 s", "5 min", "1 h", Never.
 const step = between(rawScreen, 'void format_step(', 'void category_line(');
-assert.match(step, /seconds < 60[\s\S]*?"%u s"[\s\S]*?seconds < 3600[\s\S]*?"%u min"[\s\S]*?"%u h"/);
+assert.match(step, /seconds < 60[\s\S]*?s\.duration_seconds_fmt[\s\S]*?seconds < 3600[\s\S]*?s\.duration_minutes_fmt[\s\S]*?s\.duration_hours_fmt/);
 // Rows have the mockup's fixed height, so LVGL centers their content.
 assert.match(parts, /lv_obj_set_size\(r\.row, LV_PCT\(100\), kRowHeight\);/);
 // Text sits on the browser's baselines (Inter: ascender 1984, line 2478 per 2048).

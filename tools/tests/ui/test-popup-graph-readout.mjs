@@ -239,6 +239,7 @@ const LocaleProfile& locale(const char* language){
  static const LocaleProfile en{".","",{"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"}};
  static const LocaleProfile de{",","",{"Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"}};
  return strcmp(language,"de")==0?de:en;}
+const char* binary_sensor_label(const char*,uint8_t index){return index==7?"7D":"24H";}
 const char* weather_today_label(const char*){return "Today";}
 const char* weather_today_button_label(const char*){return "Today";}
 struct Strings{const char* loading="Loading";};const Strings& strings(const char*){static Strings s;return s;}

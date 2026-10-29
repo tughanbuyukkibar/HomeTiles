@@ -175,9 +175,9 @@ for (const locale of locales) {
   assert.ok(i18n.includes(locale), `Missing central locale: ${locale}`);
 }
 assert.equal(
-  (i18n.match(/"24H", "7D"/g) || []).length,
+  (i18n.match(/"24H", "7D"|"24 sa", "7 gün"/g) || []).length,
   locales.length,
-  'All locales must use the exact Sensor-popup range abbreviations',
+  'Every locale supplies the shared history range labels',
 );
 for (const deviceClass of [
   'battery', 'battery_charging', 'carbon_monoxide', 'cold', 'connectivity',

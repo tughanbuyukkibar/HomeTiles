@@ -227,6 +227,7 @@ void update_period_buttons(EnergyPopupContext* ctx) {
   if (!ctx) return;
   const bool day = ctx->period == "day";
   style_period_button(ctx, ctx->day_btn, ctx->day_label, day);
+  if (ctx->week_label) lv_label_set_text(ctx->week_label, i18n::binary_sensor_label(configManager.getConfig().language, 7));
   style_period_button(ctx, ctx->week_btn, ctx->week_label, !day);
   fit_today_button(ctx);
 }
@@ -459,7 +460,7 @@ void update_header_value(EnergyPopupContext* ctx, const EnergyEntryData& fallbac
 
   EnergyEntryData day_entry;
   const EnergyEntryData* display_entry = &fallback;
-  String subtitle = fallback.period == "week" ? String("7D") : String(today_label());
+  String subtitle = fallback.period == "week" ? String(i18n::binary_sensor_label(configManager.getConfig().language, 7)) : String(today_label());
   if (energy_find_entry(ctx->entity_id, "day", day_entry)) {
     display_entry = &day_entry;
     subtitle = today_label();
@@ -485,7 +486,7 @@ void update_loading_header(EnergyPopupContext* ctx) {
 
   lv_label_set_text(ctx->value_label, loading_label());
   lv_label_set_text(ctx->subtitle_label,
-                    (ctx->period == "week" ? String("7D") : String(today_label())).c_str());
+                    (ctx->period == "week" ? String(i18n::binary_sensor_label(configManager.getConfig().language, 7)) : String(today_label())).c_str());
 }
 
 bool readout_twelve_hour() {
@@ -1292,7 +1293,7 @@ void build_popup_ui(EnergyPopupContext* ctx, const EnergyPopupInit& init) {
   lv_obj_clear_flag(period_row, LV_OBJ_FLAG_CLICKABLE);
 
   // 7D sits left of Today: the longer range reaches further into the past.
-  ctx->week_btn = make_button_label(period_row, "7D", &ctx->week_label);
+  ctx->week_btn = make_button_label(period_row, i18n::binary_sensor_label(configManager.getConfig().language, 7), &ctx->week_label);
   ctx->day_btn = make_button_label(period_row, today_button_label(), &ctx->day_label);
   lv_obj_add_event_cb(ctx->day_btn, on_period_click, LV_EVENT_CLICKED, ctx);
   lv_obj_add_event_cb(ctx->week_btn, on_period_click, LV_EVENT_CLICKED, ctx);

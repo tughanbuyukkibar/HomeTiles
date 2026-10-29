@@ -300,7 +300,7 @@ void network_name(char* buf, size_t len) { snprintf(buf, len, "HomeNet"); }
 const char* language_name() { return ${shown.name}; }
 bool time_text(char* buf, size_t len) { snprintf(buf, len, "%s", "${time}"); return true; }
 bool update_available() { return false; }
-// Localization: English, Berlin, the rest Auto (mockup st.loc).
+// Localization: the selected language, Berlin, the rest Auto (mockup st.loc).
 uint8_t locale_option_count(LocaleList list) {
   static const uint8_t kCounts[] = {${codes.length}, 27, 3, 4, 4};
   return kCounts[static_cast<int>(list)];
@@ -308,9 +308,9 @@ uint8_t locale_option_count(LocaleList list) {
 const char* locale_option(LocaleList list, uint8_t index) {
   static const char* const kLanguages[] = {${locales.map(locale => locale.name).join(', ')}};
   static const char* const kZones[] = ${zones};
-  static const char* const kTimes[] = {"Auto (language)", "24-hour", "12-hour"};
-  static const char* const kDates[] = {"Auto (language)", "DD.MM.YYYY", "MM/DD/YYYY", "YYYY/MM/DD"};
-  static const char* const kKeyboards[] = {"Auto (language)", "Deutsch (QWERTZ)", "English (QWERTY)",
+  static const char* const kTimes[] = {text().format_auto_language, text().format_24_hour, text().format_12_hour};
+  static const char* const kDates[] = {text().format_auto_language, "DD.MM.YYYY", "MM/DD/YYYY", "YYYY/MM/DD"};
+  static const char* const kKeyboards[] = {text().format_auto_language, "Deutsch (QWERTZ)", "English (QWERTY)",
                                            "Fran\xC3\xA7" "ais (AZERTY)"};
   switch (list) {
     case LocaleList::Language: return kLanguages[index];
@@ -321,7 +321,7 @@ const char* locale_option(LocaleList list, uint8_t index) {
   }
   return "";
 }
-uint8_t locale_selected(LocaleList list) { return list == LocaleList::TimeZone ? 2 : 0; }
+uint8_t locale_selected(LocaleList list) { return list == LocaleList::Language ? ${codes.indexOf(Code)} : list == LocaleList::TimeZone ? 2 : 0; }
 void locale_selected_changed(LocaleList, uint8_t) {}
 // System: paired, password on (mockup st.sec), or --state=off; --dialog=pairing
 // shows the number.

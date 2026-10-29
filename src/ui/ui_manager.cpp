@@ -378,7 +378,7 @@ lv_obj_t* UIManager::setupTabButton(lv_obj_t *btn, uint8_t tab_index, const char
   } else if (!has_icon) {
     // Fallback when both are empty
     text_label = lv_label_create(btn);
-    const char* fallback = (tab_index == 3) ? "Settings" : "";
+    const char* fallback = (tab_index == 3) ? i18n::strings(configManager.getConfig().language).tile_type_settings : "";
     if (fallback[0] == '\0') {
       char num_fallback[4];
       snprintf(num_fallback, sizeof(num_fallback), "%u", static_cast<unsigned>(tab_index + 1));

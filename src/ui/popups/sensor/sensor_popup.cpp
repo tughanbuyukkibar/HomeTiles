@@ -642,11 +642,11 @@ static void apply_init_to_context(SensorPopupContext* ctx, const SensorPopupInit
     if (ctx->binary_body) lv_obj_add_flag(ctx->binary_body, LV_OBJ_FLAG_HIDDEN);
     if (ctx->range_day_btn) {
       lv_obj_t* label = lv_obj_get_child(ctx->range_day_btn, 0);
-      if (label) lv_label_set_text(label, "24H");
+      if (label) lv_label_set_text(label, i18n::binary_sensor_label(configManager.getConfig().language, 6));
     }
     if (ctx->range_week_btn) {
       lv_obj_t* label = lv_obj_get_child(ctx->range_week_btn, 0);
-      if (label) lv_label_set_text(label, "7D");
+      if (label) lv_label_set_text(label, i18n::binary_sensor_label(configManager.getConfig().language, 7));
     }
     update_value_label(ctx, init.value, init.unit);
   }
@@ -3433,8 +3433,8 @@ static void build_popup_body(SensorPopupContext* ctx) {
   };
 
   // 7D sits left of 24H: the longer range reaches further into the past.
-  ctx->range_week_btn = make_range_button("7D");
-  ctx->range_day_btn = make_range_button("24H");
+  ctx->range_week_btn = make_range_button(i18n::binary_sensor_label(configManager.getConfig().language, 7));
+  ctx->range_day_btn = make_range_button(i18n::binary_sensor_label(configManager.getConfig().language, 6));
   lv_obj_add_event_cb(ctx->range_day_btn, on_range_click, LV_EVENT_CLICKED, ctx);
   lv_obj_add_event_cb(ctx->range_week_btn, on_range_click, LV_EVENT_CLICKED, ctx);
   update_range_buttons(ctx);

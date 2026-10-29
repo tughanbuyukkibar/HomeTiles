@@ -134,9 +134,9 @@ The connected network with its address and **Disconnect**, the **Hotspot** for a
 
 ### Localization
 
-Choose English, German, French, Polish, Czech, Slovak, or Spanish, the time zone, the time and date formats, and the keyboard layout. Tile titles also support Cyrillic characters.
+Choose English, German, French, Polish, Czech, Slovak, Spanish, or Turkish, the time zone, the time and date formats, and the keyboard layout. Tile titles also support Cyrillic characters.
 
-The keyboard follows the language when set to **Auto**: German, Czech, and Slovak use QWERTZ, French uses AZERTY, and English, Polish, and Spanish use QWERTY. The key beside **?123** shows the language's own letters first, for example ä, ö, ü, and ß in German, á, č, ď, é, ě, í, ň, ó, ř, š, ť, ú, ů, ý, and ž in Czech, or ñ, á, é, í, ó, ú, ü, ¿, and ¡ in Spanish, followed by other common European letters; **ABC** returns to the letters. Holding a letter offers its accented forms, the language's own first.
+The keyboard follows the language when set to **Auto**: German, Czech, and Slovak use QWERTZ, French uses AZERTY, and English, Polish, Spanish, and Turkish use QWERTY. The key beside **?123** shows the language's own letters first, for example ä, ö, ü, and ß in German, á, č, ď, é, ě, í, ň, ó, ř, š, ť, ú, ů, ý, and ž in Czech, or ñ, á, é, í, ó, ú, ü, ¿, and ¡ in Spanish, followed by other common European letters; **ABC** returns to the letters. Holding a letter offers its accented forms, the language's own first. Turkish starts with ç, ğ, ı, ö, ş, and ü; Shift preserves i/İ and ı/I. Turkish uses localized weekday/month names, a 24-hour clock, day/month/year dates, and a decimal comma under Auto.
 
 <figure class="ht-screenshot">
 <img src="../images/v09-settings-2.png" alt="Localization settings" width="1280" height="800" loading="lazy">

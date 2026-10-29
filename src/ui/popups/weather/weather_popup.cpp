@@ -1445,7 +1445,7 @@ static void update_mode_buttons(WeatherPopupContext* ctx) {
     lv_obj_t* label = lv_obj_get_child(ctx->header_week_btn, 0);
     if (label) {
       set_label_style(label, lv_color_hex(ui_theme::text()), FONT_UNIT);
-      lv_label_set_text(label, "7D");
+      lv_label_set_text(label, i18n::binary_sensor_label(configManager.getConfig().language, 7));
     }
     style_header_action_button(ctx, ctx->header_week_btn, ctx->view_mode == WeatherPopupViewMode::Week);
     const int week_x = today_day >= 0 ? kFooterOuterActionX - today_extra : kFooterInnerActionX;
@@ -3219,7 +3219,7 @@ static void build_popup_ui(WeatherPopupContext* ctx, const WeatherPopupInit& ini
     return btn;
   };
 
-  ctx->header_week_btn = make_header_action_button("7D", kFooterOuterActionX, FONT_UNIT);
+  ctx->header_week_btn = make_header_action_button(i18n::binary_sensor_label(configManager.getConfig().language, 7), kFooterOuterActionX, FONT_UNIT);
   ctx->header_today_btn =
       make_header_action_button(weather_today_button_text(), kFooterInnerActionX, FONT_UNIT);
 

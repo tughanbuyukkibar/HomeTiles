@@ -1721,7 +1721,7 @@ static void appendSettingsTabHtml(String& html, const DeviceConfig& cfg,
                         connected ? network_name : String(tr.settings_not_connected));
   appendSettingsNavItem(html, "locale", "#AB47BC", "translate", tr.admin_settings_language,
                         String(i18n::locale(cfg.language).native_name) + " \xC2\xB7 " + cfg.timezone);
-  appendSettingsNavItem(html, "system", "#26A69A", "chip", "System", FW_VERSION);
+  appendSettingsNavItem(html, "system", "#26A69A", "chip", tr.system_title, FW_VERSION);
   html += R"html(
 <div class="settings-nav-sep" aria-hidden="true"></div>)html";
   appendSettingsNavItem(html, "io", "#FF8A65", "electric-switch", tr.admin_io,

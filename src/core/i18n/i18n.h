@@ -859,6 +859,11 @@ struct Strings {
   const char* media_this_player;
   // Media library: the row that plays the opened playlist or album.
   const char* media_play_all;
+  // Shared Settings category title on the device and Web Admin.
+  const char* system_title;
+  const char* duration_seconds_fmt;
+  const char* duration_minutes_fmt;
+  const char* duration_hours_fmt;
 };
 
 // Locale-specific display rules and short runtime strings shared by
